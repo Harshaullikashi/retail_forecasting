@@ -25,7 +25,8 @@ Generates clean forecast outputs
 
 Enables easy integration with BI dashboards (Power BI)
 
-retail_forecasting/
+retail_forecasting
+
 │
 ├── data/
 │   └── retail_sales.csv             # Input dataset
@@ -64,6 +65,7 @@ GitHub
 Power BI (optional visualization layer)
 
 📊 Models Used
+
 🔹 ARIMA
 
 Classical statistical forecasting model used for short-term predictions.
@@ -82,6 +84,7 @@ Holiday patterns
 Generates full in-sample + future predictions.
 
 📥 How to Run the Project
+
 1. Clone the Repository
  git clone https://github.com/Harshaullikashi/retail_forecasting.git
  cd retail_forecasting
@@ -96,6 +99,7 @@ source venv/bin/activate      # Mac/Linux
    pip install -r requirements.txt
 4. Run Forecast Script
    python forecast.py --input data/retail_sales.csv --store 101 --item 1 --periods 30
+   
 📊 Power BI Integration
 
 The output forecast files can be directly imported into Power BI to build:
