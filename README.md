@@ -111,6 +111,13 @@ Store-level performance reports
 
 Seasonal & monthly forecasting visuals
 
+## 📈 Forecast Visualization
+
+Below is the forecast comparison between the **actual sales (last 120 days)** and the **ARIMA 30-day forecast**:
+
+![Forecast vs Actual](plots/forecast_vs_actual.png)
+
+
 
 
 
