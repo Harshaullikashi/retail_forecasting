@@ -115,7 +115,8 @@ Store-level performance monitoring
 
 Trend & seasonality visuals
 
-Forecast vs Actual KPI reports
+Forecast vs Actual KPI reports 
+
 
 
 
