@@ -92,8 +92,7 @@ Generates full in-sample + future predictions.
 2. Create a Virtual Environment
    python -m venv venv
 .\venv\Scripts\activate       # Windows
-# or
-source venv/bin/activate      # Mac/Linux
+ source venv/bin/activate      # Mac/Linux
 
 3. Install Requirements
    pip install -r requirements.txt
