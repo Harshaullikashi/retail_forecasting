@@ -1,32 +1,43 @@
-📈 Retail Sales Forecasting (ARIMA + Prophet)
+🚀 Retail Sales Forecasting (ARIMA + Prophet)
 
-End-to-end time-series forecasting pipeline built using Python, ARIMA, and Prophet, designed to predict retail item-level demand.
-The project includes data processing, forecasting models, evaluation setup, and Power BI integration guidance.
+An end-to-end time series forecasting pipeline built using Python, ARIMA, and Prophet, designed to predict store-item retail demand.
+Includes data preprocessing, model pipelines, forecast generation, and Power BI integration support.
 
-🔍 Project Overview
+📘 Project Overview
 
-Retail businesses rely heavily on accurate sales forecasts to plan inventory, pricing, and supply chain operations.
-This project builds a complete forecasting workflow:
+Retail organisations rely heavily on accurate demand forecasting for:
 
-✔ Generates a clean time-series dataset
-✔ Builds forecasting models (ARIMA, Prophet)
-✔ Produces future predictions for store–item combinations
-✔ Outputs forecast CSV files for further analytics / Power BI dashboards
+Inventory planning
 
-🧱 Project Structure
+Supply chain optimization
+
+Sales & revenue projections
+
+Reducing stockouts and overstock
+
+This project builds an automated forecasting solution that:
+
+Prepares input time-series data
+
+Trains ARIMA and Prophet models
+
+Generates clean forecast outputs
+
+Enables easy integration with BI dashboards (Power BI)
+
 retail_forecasting/
 │
 ├── data/
-│   └── retail_sales.csv               # Input time-series dataset
+│   └── retail_sales.csv             # Input dataset
 │
 ├── outputs/
-│   ├── input_series.csv               # Clean formatted series used for modeling
-│   ├── forecast_arima.csv             # ARIMA forecast output
-│   └── forecast_prophet.csv           # Prophet forecast output
+│   ├── input_series.csv             # Cleaned time series
+│   ├── forecast_arima.csv           # ARIMA forecast results
+│   └── forecast_prophet.csv         # Prophet forecast results
 │
-├── forecasts.py                       # Main forecasting script (ARIMA + Prophet)
-├── requirements.txt                   # Python dependencies
-├── README.md                          # Project documentation
+├── forecast.py                      # Main forecasting pipeline
+├── requirements.txt                 # Project dependencies
+├── README.md                        # Documentation
 └── .gitignore
 
 ⚙️ Tech Stack
@@ -38,84 +49,67 @@ Libraries
 
 pandas
 
+numpy
+
 statsmodels (ARIMA)
 
 Prophet
 
 matplotlib
 
-numpy
-
 Tools
 
-Git / GitHub
+GitHub
 
-Power BI (for dashboarding consumption)
+Power BI (optional visualization layer)
 
 📊 Models Used
-1️⃣ ARIMA (AutoRegressive Integrated Moving Average)
+🔹 ARIMA
 
-Used for classical statistical forecasting.
-Generates 30-day ahead predictions.
+Classical statistical forecasting model used for short-term predictions.
+Forecast horizon: 30 days.
 
-2️⃣ Prophet (Facebook/Meta Prophet)
+🔹 Prophet
 
-Handles trend, seasonality, and holiday effects.
-Useful for business time-series with strong weekly/annual patterns.
+Advanced forecasting library by Meta that handles:
 
-🚀 How to Run the Project
-1. Clone the repo
-git clone https://github.com/Harshaullikashi/retail_forecasting.git
-cd retail_forecasting
+Trend
 
-2. Create virtual environment
-python -m venv venv
-source venv/bin/activate        # Mac/Linux
-.\venv\Scripts\activate         # Windows
+Seasonality
 
-3. Install dependencies
-pip install -r requirements.txt
+Holiday patterns
 
-4. Run forecast
-python forecast.py --input data/retail_sales.csv --store 101 --item 1 --periods 30
+Generates full in-sample + future predictions.
 
+📥 How to Run the Project
+1. Clone the Repository
+ git clone https://github.com/Harshaullikashi/retail_forecasting.git
+ cd retail_forecasting
 
-Outputs will be written to:
+2. Create a Virtual Environment
+   python -m venv venv
+.\venv\Scripts\activate       # Windows
+# or
+source venv/bin/activate      # Mac/Linux
 
-outputs/forecast_arima.csv
-outputs/forecast_prophet.csv
-
-📂 Example Output (Preview)
-Forecast Stats
-ARIMA forecast:
- - Horizon: 30 days
- - Mean prediction: ~136.8
- - Range: 82 → 164
-
-Prophet forecast:
- - Coverage: 1116 rows (fitted + forecast)
- - Mean prediction: ~104.4
-
-📈 Visualization (Optional)
-
-Generate a visualization comparing actual vs forecast:
-
-python plot_forecast.py       # (if added)
-
-
-Expected output:
-
+3. Install Requirements
+   pip install -r requirements.txt
+4. Run Forecast Script
+   python forecast.py --input data/retail_sales.csv --store 101 --item 1 --periods 30
 📊 Power BI Integration
 
-The output CSV files (forecast_arima.csv, forecast_prophet.csv) can be imported into Power BI to build:
+The output forecast files can be directly imported into Power BI to build:
 
-Forecast dashboards
+Trend dashboards
 
-Store-level performance monitoring
+Forecast vs Actual comparisons
 
-Trend & seasonality visuals
+Store-level performance reports
 
-Forecast vs Actual KPI reports 
+Seasonal & monthly forecasting visuals
+
+
+
 
 
 
