@@ -9,7 +9,7 @@ This project demonstrates data processing, time-series modeling (ARIMA & Prophet
 
 ---
 
-## 🧠 Project Overview
+## 🧠 Project Overview    
 
 This project builds an automated forecasting system for **daily retail sales**. It covers:
 
