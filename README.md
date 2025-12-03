@@ -39,6 +39,7 @@ retail_forecasting/
 └── README.md                            # (You are here)
 
 ⚙️ How the Pipeline Works
+
 1️⃣ Data Extraction
 
 From the master retail dataset, the script filters:
@@ -94,6 +95,7 @@ Custom theme applied (harsha_theme.json)
 Dashboard Preview
 
 🚀 How to Run the Forecast Script
+
 1️⃣ Activate the virtual environment
 .\venv\Scripts\activate
 
