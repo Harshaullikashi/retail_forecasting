@@ -144,12 +144,14 @@ Actual vs ARIMA forecast
 All visuals arranged in the Overview dashboard page.
 
 🧪 Tech Stack
+
 Component	Tools Used
 Language	Python, DAX
 Modeling	ARIMA (statsmodels), Prophet
 Visualization	Power BI
 Data Handling	pandas, numpy
 Version Control	Git & GitHub
+
 🎯 Key Learnings / Outcomes
 
 How to build a production-style forecasting script
