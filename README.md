@@ -1,135 +1,162 @@
-\# Retail Forecasting — Prophet \& ARIMA + Power BI
+📈 Retail Sales Forecasting
 
+ARIMA + Prophet + Power BI Dashboard
 
+A complete end-to-end retail demand forecasting solution using Python and Power BI.
+This project demonstrates data processing, time-series modeling (ARIMA & Prophet), visualization, and dashboard design suitable for Data Analyst / BI Engineer / ML Engineer portfolios.
 
-\*\*Tech:\*\* Python (pandas, statsmodels, prophet), Power BI, Git  
+🧠 Project Overview
 
-\*\*Task:\*\* Demand forecasting for retail store-item time series and interactive visualization
+This project builds an automated forecasting system for daily retail sales.
+It covers:
 
+✔ Data cleaning & preparation
 
+✔ Time-series forecasting using ARIMA and Facebook Prophet
 
-\## Project summary
+✔ Python automation for inputs → forecasts → outputs
 
-Automated data ingestion and time-series forecasting using ARIMA and Prophet.  
+✔ Power BI dashboard to analyze actual vs predicted performance
 
-Built a Power BI dashboard to compare actual sales vs forecasts and provide KPIs and drill-down exploration.
+✔ KPI Cards & Visuals for business insights
 
+📂 Project Structure
+retail_forecasting/
+│
+├── data/
+│   └── retail_sales.csv                 # Raw input data (store, item, date, sales)
+│
+├── outputs/
+│   ├── input_series.csv                 # Clean extracted series
+│   ├── forecast_arima.csv               # ARIMA predictions
+│   └── forecast_prophet.csv             # Prophet predictions
+│
+├── images/
+│   └── forecast_chart.png               # Power BI dashboard screenshot
+│
+├── forecast.py                          # Main forecasting script
+├── harsha_theme.json                    # Custom Power BI theme
+└── README.md                            # (You are here)
 
+⚙️ How the Pipeline Works
+1️⃣ Data Extraction
 
-\## Demo screenshot
+From the master retail dataset, the script filters:
 
-!\[Actual vs ARIMA Forecast](images/forecast\_chart.png)
+store
 
+item
 
+date
 
-\## Files produced by the run
+sales
 
-\- outputs/input\_series.csv
+and prepares a clean time-series for modeling.
 
-\- outputs/forecast\_arima.csv
+2️⃣ ARIMA Forecasting
 
-\- outputs/forecast\_prophet.csv
+Auto-configures ARIMA parameters
 
+Trains model
 
+Generates future predictions
 
-\## How to reproduce (quick)
+Outputs saved to:
 
+outputs/forecast_arima.csv
 
+3️⃣ Prophet Forecasting
 
-\### 1. Activate venv:
+Handles seasonality and trend
 
-.\\venv\\Scripts\\activate
+Generates 30-day forecast
 
-## 📈 Forecast Visualization
+Outputs saved to:
 
-Below is the forecast comparison between the **actual sales (last 120 days)** and the **ARIMA 30-day forecast**:
+outputs/forecast_prophet.csv
 
-![Forecast vs Actual](plots/forecast_vs_actual.png)
+4️⃣ Power BI Dashboard
 
+Actual Sales trend
 
+ARIMA Forecast trend
 
+KPIs:
 
+Total Sales
 
+7-Day Moving Average
 
-\### 2. Run forecasting:
+Combined Actual vs Forecast chart
 
+Custom theme applied (harsha_theme.json)
 
+Dashboard Preview
 
+🚀 How to Run the Forecast Script
+1️⃣ Activate the virtual environment
+.\venv\Scripts\activate
 
+2️⃣ Run the forecasting pipeline
+python forecast.py --input data/retail_sales.csv --store 101 --item 1 --periods 30
 
-python forecast.py --input data/retail\_sales.csv --store 101 --item 1 --periods 30
+Output files generated:
 
+forecast_arima.csv
 
+forecast_prophet.csv
 
+input_series.csv
 
+📊 Power BI Dashboard Instructions
+Import forecast outputs
 
-\### 3. Load into Power BI:
+Open Power BI Desktop
 
-Import:
+Load:
 
-\- outputs/input\_series.csv  
+outputs/input_series.csv
 
-\- outputs/forecast\_arima.csv  
+outputs/forecast_arima.csv
 
-\- outputs/forecast\_prophet.csv  
+outputs/forecast_prophet.csv
 
+Apply custom theme
 
+View → Browse for themes → harsha_theme.json
 
-\### 4. Import theme:
+Build Visuals
 
-View → Themes → Browse for themes → harsha\_theme.json
+KPI Cards:
 
+Avg Sales (7 Days)
 
+Total Sales
 
-\### 5. Build Actual vs ARIMA chart:
+Line charts:
 
-\- X-axis → date (not Date Hierarchy)
+Actual sales by date
 
-\- Y-axis → Actual + ARIMA Forecast
+Actual vs ARIMA forecast
 
-\- Format → Lines:
+All visuals arranged in the Overview dashboard page.
 
-&nbsp; - Actual: #1f77b4 (blue), solid, width 2  
+🧪 Tech Stack
+Component	Tools Used
+Language	Python, DAX
+Modeling	ARIMA (statsmodels), Prophet
+Visualization	Power BI
+Data Handling	pandas, numpy
+Version Control	Git & GitHub
+🎯 Key Learnings / Outcomes
 
-&nbsp; - ARIMA Forecast: #ff7f0e (orange), dashed, width 3  
+How to build a production-style forecasting script
 
-\- Format → Markers → Off  
+Working with ARIMA + Prophet for time-series
 
-\- Format → Legend → On (Right)
+Preparing BI-ready datasets
 
+Designing clean Power BI dashboards
 
-
-\### 6. Export PNG
-
-File → Export → Export to PNG → save as `images/forecast\_chart.png`
-
-
-
-\## Git commands
-
-
-
-
-
-git add README.md harsha\_theme.json
-
-git commit -m "Add README + theme"
-
-git push origin main
-
-
-
-
-
-After exporting PNG:
-
-
-
-
-
-git add images/forecast\_chart.png
-
-git commit -m "Add dashboard screenshot"
-
-git push origin main
+Automating analytics workflows
 
