@@ -1,115 +1,44 @@
-🚀 Retail Sales Forecasting (ARIMA + Prophet)
+\# Retail Forecasting — Prophet \& ARIMA + Power BI
 
-An end-to-end time series forecasting pipeline built using Python, ARIMA, and Prophet, designed to predict store-item retail demand.
-Includes data preprocessing, model pipelines, forecast generation, and Power BI integration support.
 
-📘 Project Overview
 
-Retail organisations rely heavily on accurate demand forecasting for:
+\*\*Tech:\*\* Python (pandas, statsmodels, prophet), Power BI, Git  
 
-Inventory planning
+\*\*Task:\*\* Demand forecasting for retail store-item time series and interactive visualization
 
-Supply chain optimization
 
-Sales & revenue projections
 
-Reducing stockouts and overstock
+\## Project summary
 
-This project builds an automated forecasting solution that:
+Automated data ingestion and time-series forecasting using ARIMA and Prophet.  
 
-Prepares input time-series data
+Built a Power BI dashboard to compare actual sales vs forecasts and provide KPIs and drill-down exploration.
 
-Trains ARIMA and Prophet models
 
-Generates clean forecast outputs
 
-Enables easy integration with BI dashboards (Power BI)
+\## Demo screenshot
 
-retail_forecasting
+!\[Actual vs ARIMA Forecast](images/forecast\_chart.png)
 
-│
-├── data/
-│   └── retail_sales.csv             # Input dataset
-│
-├── outputs/
-│   ├── input_series.csv             # Cleaned time series
-│   ├── forecast_arima.csv           # ARIMA forecast results
-│   └── forecast_prophet.csv         # Prophet forecast results
-│
-├── forecast.py                      # Main forecasting pipeline
-├── requirements.txt                 # Project dependencies
-├── README.md                        # Documentation
-└── .gitignore
 
-⚙️ Tech Stack
-Languages
 
-Python
+\## Files produced by the run
 
-Libraries
+\- outputs/input\_series.csv
 
-pandas
+\- outputs/forecast\_arima.csv
 
-numpy
+\- outputs/forecast\_prophet.csv
 
-statsmodels (ARIMA)
 
-Prophet
 
-matplotlib
+\## How to reproduce (quick)
 
-Tools
 
-GitHub
 
-Power BI (optional visualization layer)
+\### 1. Activate venv:
 
-📊 Models Used
-
-🔹 ARIMA
-
-Classical statistical forecasting model used for short-term predictions.
-Forecast horizon: 30 days.
-
-🔹 Prophet
-
-Advanced forecasting library by Meta that handles:
-
-Trend
-
-Seasonality
-
-Holiday patterns
-
-Generates full in-sample + future predictions.
-
-📥 How to Run the Project
-
-1. Clone the Repository
- git clone https://github.com/Harshaullikashi/retail_forecasting.git
- cd retail_forecasting
-
-2. Create a Virtual Environment
-   python -m venv venv
-.\venv\Scripts\activate       # Windows
- source venv/bin/activate      # Mac/Linux
-
-3. Install Requirements
-   pip install -r requirements.txt
-4. Run Forecast Script
-   python forecast.py --input data/retail_sales.csv --store 101 --item 1 --periods 30
-   
-📊 Power BI Integration
-
-The output forecast files can be directly imported into Power BI to build:
-
-Trend dashboards
-
-Forecast vs Actual comparisons
-
-Store-level performance reports
-
-Seasonal & monthly forecasting visuals
+.\\venv\\Scripts\\activate
 
 ## 📈 Forecast Visualization
 
@@ -122,5 +51,85 @@ Below is the forecast comparison between the **actual sales (last 120 days)** an
 
 
 
+\### 2. Run forecasting:
 
+
+
+
+
+python forecast.py --input data/retail\_sales.csv --store 101 --item 1 --periods 30
+
+
+
+
+
+\### 3. Load into Power BI:
+
+Import:
+
+\- outputs/input\_series.csv  
+
+\- outputs/forecast\_arima.csv  
+
+\- outputs/forecast\_prophet.csv  
+
+
+
+\### 4. Import theme:
+
+View → Themes → Browse for themes → harsha\_theme.json
+
+
+
+\### 5. Build Actual vs ARIMA chart:
+
+\- X-axis → date (not Date Hierarchy)
+
+\- Y-axis → Actual + ARIMA Forecast
+
+\- Format → Lines:
+
+&nbsp; - Actual: #1f77b4 (blue), solid, width 2  
+
+&nbsp; - ARIMA Forecast: #ff7f0e (orange), dashed, width 3  
+
+\- Format → Markers → Off  
+
+\- Format → Legend → On (Right)
+
+
+
+\### 6. Export PNG
+
+File → Export → Export to PNG → save as `images/forecast\_chart.png`
+
+
+
+\## Git commands
+
+
+
+
+
+git add README.md harsha\_theme.json
+
+git commit -m "Add README + theme"
+
+git push origin main
+
+
+
+
+
+After exporting PNG:
+
+
+
+
+
+git add images/forecast\_chart.png
+
+git commit -m "Add dashboard screenshot"
+
+git push origin main
 
